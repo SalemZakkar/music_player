@@ -16,21 +16,19 @@ class TheBlackPlMusicPlayer extends StatefulWidget {
 class _TheBlackPlMusicPlayerState extends State<TheBlackPlMusicPlayer> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ThemeCubit , ThemeState>(
-      listener: (context , state)
-      {
-        if(state is ThemeChange)
-          {
-            setState(() {
-              activeTheme = state.theme;
-            });
-          }
+    return BlocListener<ThemeCubit, ThemeState>(
+      listener: (context, state) {
+        if (state is ThemeChange) {
+          setState(() {
+            activeTheme = state.theme;
+          });
+        }
       },
       child: MaterialApp(
         initialRoute: AppRouter.home,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.route,
-        theme: appThemes[activeTheme],
+        theme: appThemes[activeTheme].themeData,
         builder: (context, child) => child!,
       ),
     );
@@ -41,14 +39,14 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await themeSettings.init();
   ThemeManager.init();
-  runApp(MultiBlocProvider(
-    providers: [
-      BlocProvider<ThemeCubit>(
-        create: (context) => themeCubit,
-      )
-    ],
-    child: const TheBlackPlMusicPlayer(),
-  ),
-
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeCubit>(
+          create: (context) => themeCubit,
+        )
+      ],
+      child: const TheBlackPlMusicPlayer(),
+    ),
   );
 }

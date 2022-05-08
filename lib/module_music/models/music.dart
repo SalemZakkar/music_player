@@ -1,7 +1,4 @@
 
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 
 class Track {
   String? name;
@@ -9,16 +6,15 @@ class Track {
   String? album;
   String? duration;
   String? path;
-  Track( this.name , this.duration , this.album , this.artist , this.path);
+  Track(this.name, this.duration, this.album, this.artist, this.path);
   @override
-  String toString()
-  {
+  String toString() {
     return {
-      "Name" : name,
-      "artist" : artist,
-      "album" : album,
-      "duration" : duration.toString(),
-      "path" : path
+      "Name": name,
+      "artist": artist,
+      "album": album,
+      "duration": duration.toString(),
+      "path": path
     }.toString();
   }
 }

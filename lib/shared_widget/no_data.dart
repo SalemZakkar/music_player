@@ -5,6 +5,9 @@ class NoData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Icon(Icons.do_not_disturb , size: 50,);
+    return const Icon(
+      Icons.do_not_disturb,
+      size: 50,
+    );
   }
 }

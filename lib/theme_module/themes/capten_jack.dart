@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/theme_module/model/theme_model.dart';
 
 ThemeData capTenJack = ThemeData(
-  primaryColor: const Color.fromRGBO(87, 202, 133, 1),
-  primarySwatch: Colors.blue,
+    primaryColor: const Color.fromRGBO(87, 202, 133, 1),
+    primarySwatch: Colors.blue,
     scaffoldBackgroundColor: Colors.transparent,
     dividerColor: Colors.white,
     textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.white)),
@@ -13,15 +14,16 @@ ThemeData capTenJack = ThemeData(
       iconTheme: IconThemeData(color: Colors.white),
     ),
     tabBarTheme: const TabBarTheme(
-      labelStyle: TextStyle(
-        color: Colors.white
-      ),
-
+      labelStyle: TextStyle(color: Colors.white),
     ),
-
     inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
         enabledBorder: InputBorder.none,
-        focusedBorder: InputBorder.none)
-
-);
+        focusedBorder: InputBorder.none));
+ThemeModel capTenJackTheme = ThemeModel(
+    capTenJack,
+    const LinearGradient(colors: [
+      Color.fromRGBO(24, 78, 104, 1),
+      Color.fromRGBO(87, 202, 133, 1),
+    ]),
+    "CapTen Jack");

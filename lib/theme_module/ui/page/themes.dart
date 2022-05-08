@@ -14,6 +14,7 @@ class _ThemePageState extends State<ThemePage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // ignore: unused_local_variable
     ThemeData themeData = Theme.of(context);
     return GradientBase(
       child: Scaffold(
@@ -26,9 +27,8 @@ class _ThemePageState extends State<ThemePage> {
           alignment: Alignment.center,
           child: ListView.builder(
             itemCount: appThemes.length,
-            itemBuilder: (context , index)
-            {
-              return ThemeCard(themeData: appThemes[index], id: index);
+            itemBuilder: (context, index) {
+              return ThemeCard(themeModel: appThemes[index], id: index);
             },
           ),
         ),

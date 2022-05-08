@@ -22,7 +22,7 @@ class _TrackCardState extends State<TrackCard> {
       width: size.width * 0.95,
       height: 110,
       child: InkWell(
-       // borderRadius: BorderRadius.circular(30),
+        // borderRadius: BorderRadius.circular(30),
         onTap: () {},
         child: Column(
           children: [
@@ -51,7 +51,7 @@ class _TrackCardState extends State<TrackCard> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(widget.track.name?? AppStrings.unknown,
+                        Text(widget.track.name ?? AppStrings.unknown,
                             style: TextStyle(
                                 color: themeData.textTheme.bodyText1!.color),
                             textScaleFactor: 1.2,
@@ -60,7 +60,7 @@ class _TrackCardState extends State<TrackCard> {
                           height: 5,
                         ),
                         Text(
-                          widget.track.artist?? AppStrings.unknown,
+                          widget.track.artist ?? AppStrings.unknown,
                           style: TextStyle(
                               color: themeData.textTheme.bodyText1!.color,
                               fontWeight: FontWeight.w300),

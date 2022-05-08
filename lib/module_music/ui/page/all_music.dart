@@ -18,33 +18,29 @@ class _AllMusicState extends State<AllMusic> {
     Size size = MediaQuery.of(context).size;
     ThemeData themeData = Theme.of(context);
     return Container(
-      width: size.width,
-      height: size.height,
-      alignment: Alignment.center,
-      color: themeData.scaffoldBackgroundColor,
-      child: FutureBuilder<List<Track>>(
-        future: AudioService.getTrack(),
-        builder: (context , snapshot)
-        {
-          if(snapshot.connectionState == ConnectionState.waiting)
-          {
-          return const Loading();
-          }
-          else if(snapshot.data?.isEmpty ?? true)
-            {
+        width: size.width,
+        height: size.height,
+        alignment: Alignment.center,
+        color: themeData.scaffoldBackgroundColor,
+        child: FutureBuilder<List<Track>>(
+          future: AudioService.getTrack(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Loading();
+            } else if (snapshot.data?.isEmpty ?? true) {
               return const NoData();
+            } else {
+              return ListView.builder(
+                itemCount: snapshot.data?.length ?? 0,
+                itemBuilder: (context, index) {
+                  return TrackCard(
+                    track: snapshot.data?[index] ??
+                        Track("name", "duration", "album", "artist", "path"),
+                  );
+                },
+              );
             }
-
-          else{
-            return ListView.builder(
-              itemCount: snapshot.data?.length ?? 0,
-              itemBuilder: (context , index){
-                return TrackCard(track: snapshot.data?[index] ?? Track("name", "duration", "album", "artist", "path"),);
-              },
-            );
-          }
-        },
-      )
-    );
+          },
+        ));
   }
 }

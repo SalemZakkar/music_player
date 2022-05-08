@@ -15,41 +15,45 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-
   }
+
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
+    // ignore: unused_local_variable
     Size size = MediaQuery.of(context).size;
     return GradientBase(
       child: DefaultTabController(
         length: 2,
-
         child: Scaffold(
           appBar: AppBar(
             title: const Text("BlackPL Music"),
             actions: [
               IconButton(
                 icon: const Icon(Icons.settings),
-                onPressed: (){
-                  Navigator.pushNamed(context, AppRouter.themes);
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRouter.setting);
                 },
               ),
               IconButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 icon: const Icon(Icons.search),
               )
             ],
-            bottom:  TabBar(
+            bottom: TabBar(
               labelStyle: themeData.tabBarTheme.labelStyle,
-              tabs:   [
+              tabs: [
                 Tab(
-                  child: Text("Music" , style: TextStyle(color: themeData.tabBarTheme.labelStyle?.color!),),
+                  child: Text(
+                    "Music",
+                    style: TextStyle(
+                        color: themeData.tabBarTheme.labelStyle?.color!),
+                  ),
                 ),
                 Tab(
-                  child: Text("Albums" , style: TextStyle(color: themeData.tabBarTheme.labelStyle?.color!)),
+                  child: Text("Albums",
+                      style: TextStyle(
+                          color: themeData.tabBarTheme.labelStyle?.color!)),
                 ),
               ],
             ),

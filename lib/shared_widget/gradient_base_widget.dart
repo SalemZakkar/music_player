@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/theme_module/themes/gradients.dart';
 import 'package:music_player/theme_module/themes/list.dart';
 
 class GradientBase extends StatefulWidget {
@@ -16,13 +15,16 @@ class _GradientBaseState extends State<GradientBase> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          decoration: BoxDecoration(gradient: gradients[activeTheme]),
+        AnimatedContainer(
+          constraints: const BoxConstraints.expand(),
+          duration: const Duration(milliseconds: 500),
+          decoration:
+              BoxDecoration(gradient: appThemes[activeTheme].linearGradient),
         ),
-        Container(
+        SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: Colors.black.withOpacity(0.4),
+            //  color: Colors.black.withOpacity(0.1),
             child: widget.child)
       ],
     );

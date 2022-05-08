@@ -3,10 +3,9 @@ part of 'theme_cubit.dart';
 @immutable
 abstract class ThemeState {}
 
-class ThemeInitial extends ThemeState {
+class ThemeInitial extends ThemeState {}
 
-}
-class ThemeChange extends ThemeState{
+class ThemeChange extends ThemeState {
   final int theme;
   ThemeChange(this.theme);
 }

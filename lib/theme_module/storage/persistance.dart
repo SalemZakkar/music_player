@@ -1,4 +1,3 @@
-import 'package:music_player/constants/strings.dart';
 import 'package:music_player/logs/messages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,12 +12,12 @@ class ThemeSettings {
 
   void setTheme(int i) {
     sharedPreferences.setInt(name, i);
-    Messages.setSettingSharedPreference(name , [i.toString()]);
+    Messages.setSettingSharedPreference(name, [i.toString()]);
   }
 
   int getTheme() {
     int? theme = sharedPreferences.getInt(name);
-    Messages.getSettingSharedPreferences(name , [theme.toString()]);
+    Messages.getSettingSharedPreferences(name, [theme.toString()]);
     if (theme == null) {
       return 0;
     }

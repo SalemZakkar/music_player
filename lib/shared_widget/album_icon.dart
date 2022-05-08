@@ -5,6 +5,9 @@ class AlbumIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Icon(Icons.album , size: 70,);
+    return const Icon(
+      Icons.album,
+      size: 70,
+    );
   }
 }

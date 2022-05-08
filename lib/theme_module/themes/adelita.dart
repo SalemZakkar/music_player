@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/theme_module/model/theme_model.dart';
 
 ThemeData adeLita = ThemeData(
     primaryColor: const Color.fromRGBO(197, 51, 100, 1),
@@ -13,11 +14,17 @@ ThemeData adeLita = ThemeData(
       iconTheme: IconThemeData(color: Colors.white),
     ),
     tabBarTheme: const TabBarTheme(
-        labelStyle: TextStyle(
-            color: Colors.white
-        ),),
+      labelStyle: TextStyle(color: Colors.white),
+    ),
     inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
         enabledBorder: InputBorder.none,
         focusedBorder: InputBorder.none));
 
+ThemeModel adeLitaTheme = ThemeModel(
+    adeLita,
+    const LinearGradient(colors: [
+      Color.fromRGBO(98, 36, 116, 1),
+      Color.fromRGBO(197, 51, 100, 1),
+    ]),
+    "Adelita");

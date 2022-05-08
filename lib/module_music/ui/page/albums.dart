@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:music_player/module_music/models/album.dart';
 import 'package:music_player/module_music/service/audio_query.dart';
 import 'package:music_player/module_music/ui/widget/album_card.dart';
@@ -38,9 +37,10 @@ class _AllAlbumsState extends State<AllAlbums> {
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                   mainAxisExtent: 180),
-              itemBuilder: (context , index)
-              {
-                return AlbumCard(album: snapshot.data?[index] ?? Album("name" , 0),);
+              itemBuilder: (context, index) {
+                return AlbumCard(
+                  album: snapshot.data?[index] ?? Album("name", 0),
+                );
               },
               itemCount: snapshot.data?.length ?? 0,
             );
