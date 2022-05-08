@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/constants/strings.dart';
+import 'package:music_player/module_music/buisness_logic/cubit/player_cubit.dart';
 import 'package:music_player/module_music/models/music.dart';
 import 'package:music_player/shared_widget/divider.dart';
 import 'package:music_player/shared_widget/music_icon.dart';
@@ -20,26 +21,28 @@ class _TrackCardState extends State<TrackCard> {
     ThemeData themeData = Theme.of(context);
     return SizedBox(
       width: size.width * 0.95,
-      height: 110,
+      height: 90,
       child: InkWell(
         // borderRadius: BorderRadius.circular(30),
-        onTap: () {},
+        onTap: () {
+          playerCubit.playTrack(widget.track.path ?? " ");
+        },
         child: Column(
           children: [
             Container(
               width: size.width * 0.95,
-              height: 100,
+              height: 85,
               color: Colors.transparent,
               alignment: Alignment.center,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 80,
-                    height: 80,
+                    width: 60,
+                    height: 60,
                     decoration: BoxDecoration(
                         color: themeData.cardColor.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(25)),
+                        borderRadius: BorderRadius.circular(50)),
                     alignment: Alignment.center,
                     child: const MusicIcon(),
                   ),
@@ -54,7 +57,7 @@ class _TrackCardState extends State<TrackCard> {
                         Text(widget.track.name ?? AppStrings.unknown,
                             style: TextStyle(
                                 color: themeData.textTheme.bodyText1!.color),
-                            textScaleFactor: 1.2,
+                            textScaleFactor: 0.8,
                             overflow: TextOverflow.ellipsis),
                         const SizedBox(
                           height: 5,
@@ -64,7 +67,7 @@ class _TrackCardState extends State<TrackCard> {
                           style: TextStyle(
                               color: themeData.textTheme.bodyText1!.color,
                               fontWeight: FontWeight.w300),
-                          textScaleFactor: 1,
+                          textScaleFactor: 0.9,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
@@ -73,12 +76,9 @@ class _TrackCardState extends State<TrackCard> {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 2,
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [DividerWidget(width: size.width * 0.75)],
+              children: [DividerWidget(width: size.width * 0.8)],
             )
           ],
         ),

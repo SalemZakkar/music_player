@@ -1,5 +1,3 @@
-
-
 class Track {
   String? name;
   String? artist;

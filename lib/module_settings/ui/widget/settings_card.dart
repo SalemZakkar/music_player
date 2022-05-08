@@ -26,7 +26,7 @@ class _SettingCardState extends State<SettingCard> {
             width: size.width * 0.9,
             height: 100,
             decoration: BoxDecoration(
-                color: themeData.cardColor.withOpacity(0.5),
+                color: themeData.cardColor.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(25)),
             alignment: Alignment.centerLeft,
             child: Row(

@@ -17,9 +17,10 @@ ThemeData adeLita = ThemeData(
       labelStyle: TextStyle(color: Colors.white),
     ),
     inputDecorationTheme: const InputDecorationTheme(
-        border: InputBorder.none,
-        enabledBorder: InputBorder.none,
-        focusedBorder: InputBorder.none));
+      border: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      focusedBorder: InputBorder.none,
+    ));
 
 ThemeModel adeLitaTheme = ThemeModel(
     adeLita,

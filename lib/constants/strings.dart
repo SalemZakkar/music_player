@@ -7,4 +7,6 @@ class AppStrings {
   static String assetIconPath = "icons/";
   static String loading = "LOADING";
   static String unknown = "unknown";
+  static String packageName = "com.TheBlackPearL.music_player";
+  static String notificationName = "BlackPL Music";
 }

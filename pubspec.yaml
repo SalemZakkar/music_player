@@ -37,6 +37,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   shared_preferences: ^2.0.13
   on_audio_query: ^2.6.0
+  just_audio: ^0.9.21
 
 dev_dependencies:
   flutter_test:

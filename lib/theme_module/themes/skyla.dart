@@ -24,6 +24,6 @@ ThemeModel skylaTheme = ThemeModel(
     skYla,
     const LinearGradient(colors: [
       Color.fromRGBO(96, 120, 234, 1),
-      Color.fromRGBO(23, 234, 217, 1),
+      Color.fromRGBO(80, 200, 240, 1),
     ]),
     "Skyla");

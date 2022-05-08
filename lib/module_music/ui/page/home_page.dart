@@ -1,6 +1,7 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:music_player/app_router.dart';
-import 'package:music_player/module_music/ui/page/albums.dart';
 import 'package:music_player/module_music/ui/page/all_music.dart';
 import 'package:music_player/shared_widget/gradient_base_widget.dart';
 
@@ -20,7 +21,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = Theme.of(context);
-    // ignore: unused_local_variable
     Size size = MediaQuery.of(context).size;
     return GradientBase(
       child: DefaultTabController(
@@ -36,35 +36,14 @@ class _HomeState extends State<Home> {
                 },
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRouter.search);
+                },
                 icon: const Icon(Icons.search),
               )
             ],
-            bottom: TabBar(
-              labelStyle: themeData.tabBarTheme.labelStyle,
-              tabs: [
-                Tab(
-                  child: Text(
-                    "Music",
-                    style: TextStyle(
-                        color: themeData.tabBarTheme.labelStyle?.color!),
-                  ),
-                ),
-                Tab(
-                  child: Text("Albums",
-                      style: TextStyle(
-                          color: themeData.tabBarTheme.labelStyle?.color!)),
-                ),
-              ],
-            ),
           ),
-          body: const TabBarView(
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              AllMusic(),
-              AllAlbums(),
-            ],
-          ),
+          body: const AllMusic(),
         ),
       ),
     );

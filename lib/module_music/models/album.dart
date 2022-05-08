@@ -1,4 +1,3 @@
-
 class Album {
   String name;
   int num = 0;
