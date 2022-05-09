@@ -20,6 +20,10 @@ class AudioPlayerHelper {
   static void stop() {
     audioPlayer.stop();
   }
+  static void seek(Duration duration)
+  {
+    audioPlayer.seek(duration);
+  }
 }
 
 AudioPlayer audioPlayer = AudioPlayer();

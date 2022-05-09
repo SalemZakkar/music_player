@@ -25,7 +25,7 @@ class _TrackCardState extends State<TrackCard> {
       child: InkWell(
         // borderRadius: BorderRadius.circular(30),
         onTap: () {
-          playerCubit.playTrack(widget.track.path ?? " ");
+          playerCubit.playTrack(widget.track);
         },
         child: Column(
           children: [

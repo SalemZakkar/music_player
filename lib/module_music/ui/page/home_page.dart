@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/app_router.dart';
 import 'package:music_player/module_music/ui/page/all_music.dart';
+import 'package:music_player/module_music/ui/widget/mini_player.dart';
 import 'package:music_player/shared_widget/gradient_base_widget.dart';
 
 class Home extends StatefulWidget {
@@ -44,6 +45,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           body: const AllMusic(),
+          bottomNavigationBar: const MiniPlayer(),
         ),
       ),
     );

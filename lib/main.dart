@@ -37,9 +37,7 @@ class _TheBlackPlMusicPlayerState extends State<TheBlackPlMusicPlayer> {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await themeSettings.init();
-
   ThemeManager.init();
   runApp(
     MultiBlocProvider(
